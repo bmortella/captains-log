@@ -8,4 +8,8 @@ exports.insertLog = function (text) {
 
 exports.getLogs = function () {
   return axios.get(apiUrl);
-}
+};
+
+exports.deleteLog = function (id) {
+  return axios.delete(`${apiUrl}/${id}`);
+};

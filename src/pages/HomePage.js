@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { insertLog } from "../api";
+import { getLogs } from "../api";
 
 function HomePage() {
   const [newLog, setNewLog] = useState("");
+  const [logs, setLogs] = useState([]);
 
   function handleChange(event) {
     setNewLog(event.target.value);
@@ -15,8 +17,18 @@ function HomePage() {
     });
   }
 
+  useEffect(() => {
+    getLogs().then((response) => {
+      setLogs(response.data)
+    })
+  }, [])
+
+
   return (
     <div>
+      <ul>
+        {logs.map((item) => <li key={item._id}>{item.text}</li>)}
+      </ul>
       <Form>
         <FormGroup>
           <Label for="exampleText">Log</Label>

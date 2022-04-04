@@ -5,3 +5,7 @@ const apiUrl = "https://ironrest.herokuapp.com/captains-log";
 exports.insertLog = function (text) {
   return axios.post(apiUrl, { date: "", text: text });
 };
+
+exports.getLogs = function () {
+  return axios.get(apiUrl);
+}

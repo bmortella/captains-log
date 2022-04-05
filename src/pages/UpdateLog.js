@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useParams, useNavigate } from "react-router-dom";
 import { fetchLog, updateLog } from "../api";
+
+import LogForm from "../components/LogForm";
 
 function UpdateLog() {
   const [log, setLog] = useState({});
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -14,33 +16,13 @@ function UpdateLog() {
     });
   }, []);
 
-  function handleChange(event) {
-    setLog({ ...log, text: event.target.value });
-  }
-
-  function update() {
-    updateLog(log.id, log.text).then((response) => {
-      console.log(response);
+  function update(updatedLog) {
+    updateLog(updatedLog.id, updatedLog.text).then((response) => {
+      navigate("/");
     });
   }
 
-  return (
-    <div>
-      <Form>
-        <FormGroup>
-          <Label for="textArea">Log</Label>
-          <Input
-            id="textArea"
-            name="text"
-            type="textarea"
-            onChange={handleChange}
-            value={log.text}
-          />
-        </FormGroup>
-        <Button onClick={update}>Submit</Button>
-      </Form>
-    </div>
-  );
+  return <div>{log.text && <LogForm action={update} log={log} />}</div>;
 }
 
 export default UpdateLog;

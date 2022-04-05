@@ -1,34 +1,20 @@
-import { useState } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 import { insertLog } from "../api";
 
+import LogForm from "../components/LogForm";
+
 function NewLog() {
-  const [newLog, setNewLog] = useState("");
+  const navigate = useNavigate();
 
-  function handleChange(event) {
-    setNewLog(event.target.value);
-  }
-
-  function insert() {
-    insertLog(newLog).then((response) => {
-      console.log(response);
+  function insert(newLog) {
+    insertLog(newLog.text).then((response) => {
+      navigate("/");
     });
   }
 
   return (
     <div>
-      <Form>
-        <FormGroup>
-          <Label for="textArea">Log</Label>
-          <Input
-            id="textArea"
-            name="text"
-            type="textarea"
-            onChange={handleChange}
-          />
-        </FormGroup>
-        <Button onClick={insert}>Submit</Button>
-      </Form>
+      <LogForm action={insert} />
     </div>
   );
 }

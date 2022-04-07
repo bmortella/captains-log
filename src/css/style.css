@@ -1,0 +1,16 @@
+.stardate {
+  margin-top: 0;
+}
+
+.buttons.edit-delete {
+  justify-content: flex-end;
+}
+
+footer {
+  justify-content: center;
+  background: none;
+}
+
+footer::before {
+  height: auto;
+}

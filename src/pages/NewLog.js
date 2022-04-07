@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { insertLog } from "../api";
+import { insertLog } from "../utils/api";
 
 import LogForm from "../components/LogForm";
 

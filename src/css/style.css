@@ -6,6 +6,14 @@
   justify-content: flex-end;
 }
 
+.log-form {
+  width: 100%;
+  background-color: black;
+  color: #cc77ff;
+  font-size: 0.9rem;
+  font-family: 'Antonio';
+}
+
 footer {
   justify-content: center;
   background: none;

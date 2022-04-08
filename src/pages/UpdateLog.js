@@ -17,7 +17,7 @@ function UpdateLog() {
   }, []);
 
   function update(updatedLog) {
-    updateLog(updatedLog.id, updatedLog.text).then((response) => {
+    updateLog(updatedLog.id, updatedLog.text).then(() => {
       navigate("/");
     });
   }

@@ -9,7 +9,10 @@ function HomePage() {
 
   useEffect(() => {
     getLogs().then((response) => {
-      setLogs(response.data);
+      const sortedLogs = response.data.sort((a, b) => {
+        return b.date - a.date;
+      });
+      setLogs(sortedLogs);
     });
   }, []);
 

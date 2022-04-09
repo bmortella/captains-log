@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Log(props) {
   return (
     <div>
-      <div class="lcars-text-bar">
+      <div className="lcars-text-bar">
         <span>{props.log.stardate}</span>
       </div>
       <p>{props.log.text}</p>

@@ -10,7 +10,8 @@ function LogForm(props) {
     setLog({ ...log, text: event.target.value });
   }
 
-  function handleAction() {
+  function handleAction(event) {
+    event.preventDefault();
     props.action(log);
   }
 
@@ -24,7 +25,7 @@ function LogForm(props) {
         onChange={handleChange}
         value={log.text}
         rows="10"
-        spellcheck="false"
+        spellCheck={false}
         className="log-form"
       />
       <div className="buttons buttons-right">

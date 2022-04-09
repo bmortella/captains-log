@@ -1,7 +1,7 @@
 import "./css/lcars-classic.min.css";
 import "./css/style.css";
 
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import NewLog from "./pages/NewLog";

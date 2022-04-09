@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { fetchLog, updateLog } from "../api";
+import { fetchLog, updateLog } from "../utils/api";
 
 import LogForm from "../components/LogForm";
 
@@ -17,7 +17,7 @@ function UpdateLog() {
   }, []);
 
   function update(updatedLog) {
-    updateLog(updatedLog.id, updatedLog.text).then((response) => {
+    updateLog(updatedLog.id, updatedLog.text).then(() => {
       navigate("/");
     });
   }

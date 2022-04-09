@@ -1,9 +1,14 @@
 const axios = require("axios").default;
+const stardate = require("./stardate").default;
 
 const apiUrl = "https://ironrest.herokuapp.com/captains-log";
 
 exports.insertLog = function (text) {
-  return axios.post(apiUrl, { date: "", text: text });
+  return axios.post(apiUrl, {
+    date: Date.now(),
+    stardate: stardate(),
+    text: text,
+  });
 };
 
 exports.getLogs = function () {

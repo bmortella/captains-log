@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useState } from "react";
 
 function LogForm(props) {
   const [log, setLog] = useState({
@@ -11,24 +10,28 @@ function LogForm(props) {
     setLog({ ...log, text: event.target.value });
   }
 
-  function handleAction() {
+  function handleAction(event) {
+    event.preventDefault();
     props.action(log);
   }
 
   return (
-    <Form>
-      <FormGroup>
-        <Label for="textArea">Log</Label>
-        <Input
-          id="textArea"
-          name="text"
-          type="textarea"
-          onChange={handleChange}
-          value={log.text}
-        />
-      </FormGroup>
-      <Button onClick={handleAction}>Submit</Button>
-    </Form>
+    <form>
+      <h1 className="title">Log</h1>
+      <textarea
+        id="textArea"
+        name="text"
+        type="textarea"
+        onChange={handleChange}
+        value={log.text}
+        rows="10"
+        spellCheck={false}
+        className="log-form"
+      />
+      <div className="buttons buttons-right">
+        <button onClick={handleAction}>Submit</button>
+      </div>
+    </form>
   );
 }
 

@@ -7,7 +7,7 @@ function NewLog() {
   const navigate = useNavigate();
 
   function insert(newLog) {
-    insertLog(newLog.text).then(() => {
+    insertLog(newLog).then(() => {
       navigate("/");
     });
   }

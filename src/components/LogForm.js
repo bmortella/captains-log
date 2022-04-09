@@ -4,7 +4,7 @@ function LogForm(props) {
   const [log, setLog] = useState({
     id: props.log ? props.log.id : null,
     text: props.log ? props.log.text : "",
-    image: props.log ? props.log.text : null,
+    image: props.log ? props.log.image : null,
   });
   const [selectedImage, setSelectedImage] = useState();
 
@@ -44,6 +44,7 @@ function LogForm(props) {
         spellCheck={false}
         className="log-form"
       />
+      {log.image && <img src={log.image} className="pics" />}
       <div className="buttons buttons-right">
         <p>{selectedImage}</p>
         <label for="avatar" className="almond">

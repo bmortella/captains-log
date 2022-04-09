@@ -12,7 +12,7 @@ function UpdateLog() {
 
   useEffect(() => {
     fetchLog(id).then((response) => {
-      setLog({ id: id, text: response.data.text });
+      setLog({ id: id, text: response.data.text, image: response.data.image });
     });
   }, []);
 

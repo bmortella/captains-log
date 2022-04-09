@@ -26,10 +26,18 @@ function LogForm(props) {
     }
   }
 
+  function handleRemoveImage(event) {
+    event.preventDefault()
+    setLog({ ...log, image: null })
+    setSelectedImage(null)
+  }
+
   function handleAction(event) {
     event.preventDefault();
     props.action(log);
   }
+
+
 
   return (
     <form>
@@ -47,6 +55,7 @@ function LogForm(props) {
       {log.image && <img src={log.image} className="pics" />}
       <div className="buttons buttons-right">
         <p>{selectedImage}</p>
+        {log.image && <button className="tomato" onClick={handleRemoveImage}>Remove Image</button>}
         <label for="avatar" className="almond">
           Upload image
         </label>

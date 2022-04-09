@@ -21,7 +21,7 @@ function HomePage() {
 
   return (
     <div>
-      <h1 className="stardate">Stardate {stardate()}</h1>
+      <h1 className="title">Stardate {stardate()}</h1>
       {logs.map((log) => (
         <Log log={log} delete={delLog}></Log>
       ))}

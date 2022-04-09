@@ -1,8 +1,8 @@
-.stardate {
+.title {
   margin-top: 0;
 }
 
-.buttons.edit-delete {
+.buttons.buttons-right {
   justify-content: flex-end;
 }
 
@@ -11,7 +11,35 @@
   background-color: black;
   color: #cc77ff;
   font-size: 0.9rem;
-  font-family: 'Antonio';
+  font-family: "Antonio";
+}
+
+.buttons button {
+  margin: 0 8px 16px 8px;
+  width: 200px;
+  height: 60px;
+  padding: 24px 25px 10px 0;
+  background-color: #c8f;
+  border: none;
+  border-radius: 26px;
+  text-align: right;
+  line-height: normal;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Antonio";
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.buttons button.two-rows {
+  font-size: 21px;
+  padding-top: 2px;
 }
 
 footer {

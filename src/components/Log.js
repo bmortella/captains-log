@@ -7,17 +7,13 @@ function Log(props) {
         <span>{props.log.stardate}</span>
       </div>
       <p>{props.log.text}</p>
-      <div className="buttons edit-delete">
+      <div className="buttons buttons-right">
         <Link to={`/updateLog/${props.log._id}`} className="bluey">
           Edit
         </Link>
-        <a
-          href="#"
-          className="tomato"
-          onClick={() => props.delete(props.log._id)}
-        >
+        <button className="tomato" onClick={() => props.delete(props.log._id)}>
           Delete
-        </a>
+        </button>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function LogForm(props) {
   const [log, setLog] = useState({
@@ -16,8 +16,8 @@ function LogForm(props) {
 
   return (
     <form>
-      <h1 className="stardate">Log</h1>
-      <textarea 
+      <h1 className="title">Log</h1>
+      <textarea
         id="textArea"
         name="text"
         type="textarea"
@@ -27,8 +27,8 @@ function LogForm(props) {
         spellcheck="false"
         className="log-form"
       />
-      <div className="buttons">
-        <a onClick={handleAction}>Submit</a>
+      <div className="buttons buttons-right">
+        <button onClick={handleAction}>Submit</button>
       </div>
     </form>
   );

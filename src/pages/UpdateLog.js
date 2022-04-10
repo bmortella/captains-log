@@ -22,7 +22,9 @@ function UpdateLog() {
     });
   }
 
-  return <div>{log && <LogForm action={update} log={log} />}</div>;
+  return (
+    <div>{log && <LogForm title="Edit Log" action={update} log={log} />}</div>
+  );
 }
 
 export default UpdateLog;

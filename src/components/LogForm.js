@@ -27,9 +27,9 @@ function LogForm(props) {
   }
 
   function handleRemoveImage(event) {
-    event.preventDefault()
-    setLog({ ...log, image: null })
-    setSelectedImage(null)
+    event.preventDefault();
+    setLog({ ...log, image: null });
+    setSelectedImage(null);
   }
 
   function handleAction(event) {
@@ -37,11 +37,9 @@ function LogForm(props) {
     props.action(log);
   }
 
-
-
   return (
     <form>
-      <h1 className="title">Log</h1>
+      <h1 className="title">{props.title}</h1>
       <textarea
         id="textArea"
         name="text"
@@ -55,14 +53,18 @@ function LogForm(props) {
       {log.image && <img src={log.image} className="pics" />}
       <div className="buttons buttons-right">
         <p>{selectedImage}</p>
-        {log.image && <button className="tomato" onClick={handleRemoveImage}>Remove Image</button>}
-        <label for="avatar" className="almond">
+        {log.image && (
+          <button className="tomato" onClick={handleRemoveImage}>
+            Remove Image
+          </button>
+        )}
+        <label for="image" className="almond">
           Upload image
         </label>
         <input
           type="file"
-          name="avatar"
-          id="avatar"
+          name="image"
+          id="image"
           accept=".jpeg, .png, .jpg"
           onChange={handleFileChange}
         />

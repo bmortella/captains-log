@@ -5,7 +5,7 @@ import { fetchLog, updateLog } from "../utils/api";
 import LogForm from "../components/LogForm";
 
 function UpdateLog() {
-  const [log, setLog] = useState({});
+  const [log, setLog] = useState(null);
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -22,7 +22,7 @@ function UpdateLog() {
     });
   }
 
-  return <div>{log.text && <LogForm action={update} log={log} />}</div>;
+  return <div>{log && <LogForm action={update} log={log} />}</div>;
 }
 
 export default UpdateLog;

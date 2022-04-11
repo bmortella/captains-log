@@ -5,24 +5,26 @@ import { fetchLog, updateLog } from "../utils/api";
 import LogForm from "../components/LogForm";
 
 function UpdateLog() {
-  const [log, setLog] = useState({});
+  const [log, setLog] = useState(null);
   const navigate = useNavigate();
 
   const { id } = useParams();
 
   useEffect(() => {
     fetchLog(id).then((response) => {
-      setLog({ id: id, text: response.data.text });
+      setLog({ id: id, text: response.data.text, image: response.data.image });
     });
   }, []);
 
   function update(updatedLog) {
-    updateLog(updatedLog.id, updatedLog.text).then(() => {
+    updateLog(updatedLog).then(() => {
       navigate("/");
     });
   }
 
-  return <div>{log.text && <LogForm action={update} log={log} />}</div>;
+  return (
+    <div>{log && <LogForm title="Edit Log" action={update} log={log} />}</div>
+  );
 }
 
 export default UpdateLog;

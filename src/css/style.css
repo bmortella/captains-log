@@ -14,7 +14,12 @@
   font-family: "Antonio";
 }
 
-.buttons button {
+input[type="file"] {
+  display: none;
+}
+
+.buttons button,
+label {
   margin: 0 8px 16px 8px;
   width: 200px;
   height: 60px;

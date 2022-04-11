@@ -6,6 +6,8 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NewLog from "./pages/NewLog";
 import UpdateLog from "./pages/UpdateLog";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -132,7 +134,7 @@ function App() {
                 </a>
               </div>
               <div className="button" id="bottom-right">
-                <a href="">About</a>
+                <a href="/about">About</a>
               </div>
             </div>
           </div>
@@ -200,6 +202,8 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/newLog" element={<NewLog />} />
               <Route path="/updateLog/:id" element={<UpdateLog />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             <footer>
               <p>

@@ -7,6 +7,7 @@ function Log(props) {
         <span>{props.log.stardate}</span>
       </div>
       <p>{props.log.text}</p>
+      {props.log.image && <img src={props.log.image} className="pics" />}
       <div className="buttons buttons-right">
         <Link to={`/updateLog/${props.log._id}`} className="bluey">
           Edit

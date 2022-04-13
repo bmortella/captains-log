@@ -1,7 +1,7 @@
 import "./css/lcars-classic.min.css";
 import "./css/style.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import NewLog from "./pages/NewLog";
@@ -20,7 +20,7 @@ function App() {
         </div>
         <div className="left-frame-top">
           <div className="panel-1">
-            <a href="/">HOME</a>
+            <Link to="/">HOME</Link>
           </div>
           <div className="panel-2">
             02<span className="hop">-262000</span>
@@ -139,7 +139,7 @@ function App() {
                 </a>
               </div>
               <div className="button" id="bottom-right">
-                <a href="/about">About</a>
+                <Link to="/about">About</Link>
               </div>
             </div>
           </div>
@@ -162,9 +162,9 @@ function App() {
               03<span className="hop">-111968</span>
             </div>
             <div className="sidebar-buttons">
-              <a href="/newLog" className="bluey">
+              <Link to="/newLog" className="bluey">
                 New Log
-              </a>
+              </Link>
             </div>
             <div className="panel-4">
               04<span className="hop">-041969</span>

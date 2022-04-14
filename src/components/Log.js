@@ -12,7 +12,7 @@ function Log(props) {
         <Link to={`/updateLog/${props.log._id}`} className="bluey">
           Edit
         </Link>
-        <button className="tomato" onClick={() => props.delete(props.log._id)}>
+        <button className="tomato" onClick={() => props.delete()}>
           Delete
         </button>
       </div>

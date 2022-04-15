@@ -3,14 +3,11 @@ function About() {
     <div>
       <h1>About</h1>
       <p>
-        Captains's log is a simple journaling application developed as a project
+        Captain's log is a simple journaling application developed as a project
         for the{" "}
-        <a href="https://www.ironhack.com">
-          Ironhack Web Developement Bootcamp
-        </a>
+        <a href="https://www.ironhack.com">Ironhack Web Development Bootcamp</a>
         . This website was made using React.js and the LCARS template by Jim
-        Robertus, with a few a modifications. You can check out how it was
-        created{" "}
+        Robertus, with a few modifications. You can check out how it was created{" "}
         <a href="https://github.com/bmortella/captains-log">on GitHub</a>.
       </p>
       <p>

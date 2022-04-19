@@ -58,7 +58,7 @@ function LogForm(props) {
             Remove Image
           </button>
         )}
-        <label for="image" className="almond">
+        <label htmlFor="image" className="almond">
           Upload image
         </label>
         <input

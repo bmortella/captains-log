@@ -10,6 +10,10 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 function App() {
+  function handleBlur(event) {
+    event.target.blur();
+  }
+
   return (
     <div className="App">
       <div className="wrap">
@@ -20,7 +24,9 @@ function App() {
         </div>
         <div className="left-frame-top">
           <div className="panel-1">
-            <Link to="/">HOME</Link>
+            <Link to="/" onClick={handleBlur}>
+              HOME
+            </Link>
           </div>
           <div className="panel-2">
             02<span className="hop">-262000</span>
@@ -134,12 +140,15 @@ function App() {
                 <a
                   href="https://github.com/bmortella/captains-log"
                   className="blink"
+                  onClick={handleBlur}
                 >
                   GitHub
                 </a>
               </div>
               <div className="button" id="bottom-right">
-                <Link to="/about">About</Link>
+                <Link to="/about" onClick={handleBlur}>
+                  About
+                </Link>
               </div>
             </div>
           </div>
@@ -162,7 +171,7 @@ function App() {
               03<span className="hop">-111968</span>
             </div>
             <div className="sidebar-buttons">
-              <Link to="/newLog" className="bluey">
+              <Link to="/newLog" className="bluey" onClick={handleBlur}>
                 New Log
               </Link>
             </div>

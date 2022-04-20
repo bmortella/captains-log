@@ -219,7 +219,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-            <footer>
+            <footer className="footer">
               <p>
                 LCARS Inspired Website Template by www.TheLCARS.com, with
                 modifications.

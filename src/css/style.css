@@ -47,11 +47,71 @@ label {
   padding-top: 2px;
 }
 
-footer {
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  background: none;
+  z-index: 3;
 }
 
-footer::before {
+.modal-content {
+  display: flex;
+  bottom: 0;
+  margin: 50px auto 0 auto;
+  padding: 12px 0;
+  background: linear-gradient(#78f 50%, #d44 50%);
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  width: 40%;
+  height: 20%;
+}
+.modal-content::before {
+  content: "";
+  background-color: #000;
+  display: block;
+  width: 5px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  overflow: hidden;
+}
+.modal-content::after {
+  content: "";
+  background-color: #000;
+  display: block;
+  width: 2px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1400px) {
+  .modal-content {
+    width: 80%;
+    height: 30%;
+  }
+}
+
+.modal-text {
+  margin-bottom: 15px;
+}
+
+.footer {
+  justify-content: center;
+  background: none;
+  margin-top: 40px;
+}
+
+.footer::before {
   height: auto;
 }
